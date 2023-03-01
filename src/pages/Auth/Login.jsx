@@ -2,7 +2,7 @@ import React from 'react'
 import "./Auth.css";
 
 
-const LogIn = ({loading, toggle, settoggle, LoginhandleChange, SubmitData, login, setlogin, error }) => {
+const LogIn = ({loading, toggle, settoggle, LoginhandleChange, SubmitData, error }) => {
     
   return (
       <div className="a-right">
