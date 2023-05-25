@@ -7,7 +7,7 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
         <form onSubmit={SubmitData} className="infoForm authForm">
           <h3>Sign up</h3>
   
-          <div>
+       <div>
             <input
              required
               type="text"
@@ -16,16 +16,17 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
               name="firstname"
               onChange={handleChange}
             />
+          </div>
+          <div>
             <input
-             required
+              required
               type="text"
               placeholder="Last Name"
               className="infoInput"
               name="lastname"
               onChange={handleChange}
             />
-          </div>
-  
+         </div>
           <div>
             <input
              required
@@ -46,8 +47,10 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
               placeholder="Password"
               onChange={handleChange}
             />
+          </div>
+          <div>
             <input
-             required
+              required
               type="password"
               className="infoInput"
               name="confirmpass"
