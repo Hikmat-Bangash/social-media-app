@@ -83,7 +83,7 @@ const Auth = () => {
       <div className="a-left">
         <img src={Logo} alt="" />
         <div className="Webname">
-          <h1>HKB Media</h1>
+          <h1>HB Media</h1>
           <h6>Explore the ideas throughout the world</h6>
         </div>
       </div>
