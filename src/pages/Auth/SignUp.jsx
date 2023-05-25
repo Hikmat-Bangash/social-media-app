@@ -58,11 +58,7 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
               onChange={handleChange}
             />
           </div>
-          {error && (
-            <span style={{ color: "red" }}>
-              *Confirm Password is not matching!
-            </span>
-          )}
+        
           <div>
             <span
               style={{ fontSize: "12px", cursor: "pointer", color: "blue" }}
