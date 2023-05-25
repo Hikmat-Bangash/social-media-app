@@ -33,7 +33,7 @@ const LogIn = ({loading, toggle, settoggle, LoginhandleChange, SubmitData, error
           {error && <span style={{color: "red"}}> *Invalid Credentials</span>}
           <div>
             <span
-              style={{ fontSize: "12px", cursor: "pointer" }}
+              style={{ fontSize: "12px", cursor: "pointer", color: "blue" }}
               onClick={() => settoggle(!toggle)}
             >
               Don't have an account Sign up
