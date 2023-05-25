@@ -65,7 +65,7 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
           )}
           <div>
             <span
-              style={{ fontSize: "12px", cursor: "pointer" }}
+              style={{ fontSize: "12px", cursor: "pointer", color: "blue" }}
               onClick={() => settoggle(!toggle)}
             >
               Already have an account. Login!
