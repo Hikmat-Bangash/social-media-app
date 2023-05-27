@@ -64,15 +64,15 @@ const Auth = () => {
   }
   //------ for login section --------------------
   else{
-       if(login.username !== data.username || login.password !== data.password){
-        seterror(true);
-        console.log(login);
-       }else{
-         seterror(false);
-         console.log("logged in successfully");
-         dispatch(logIn(login));
-       }
-      // dispatch(logIn(login));
+//        if(login.username !== data.username || login.password !== data.password){
+//         seterror(true);
+//         console.log(login);
+//        }else{
+//          seterror(false);
+//          console.log("logged in successfully");
+//          dispatch(logIn(login));
+//        }
+      dispatch(logIn(login));
 
   }
   };
