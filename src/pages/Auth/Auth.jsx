@@ -63,7 +63,6 @@ const Auth = () => {
           // eslint-disable-next-line eqeqeq
           if (res.status == 200) {
             settoggle(!toggle);
-            window.alert("signUp successfully")
             // eslint-disable-next-line eqeqeq
           } else if (res.status == 401) {
             window.alert("This email has already registered")
