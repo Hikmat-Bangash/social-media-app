@@ -2,7 +2,7 @@ import React from "react";
 import Cover from "../../img/cover_avator.jpeg";
 import Profile from "../../img/avator.jpg";
 import "./ProfileCard.css";
-import {Link, useRoutes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { FiEdit } from "react-icons/fi"
 import { BiLogOut } from "react-icons/bi"
