@@ -2,7 +2,8 @@ import React from 'react'
 import "./Auth.css";
 
 
-const LogIn = ({loading, toggle, settoggle, LoginhandleChange, SubmitData, error }) => {
+const
+  LogIn = ({ loading, toggle, settoggle, LoginhandleChange, SubmitData, login, setlogin, error }) => {
     
   return (
       <div className="a-right">
@@ -33,12 +34,12 @@ const LogIn = ({loading, toggle, settoggle, LoginhandleChange, SubmitData, error
           {error && <span style={{color: "red"}}> *Invalid Credentials</span>}
           <div>
             <span
-              style={{ fontSize: "12px", cursor: "pointer", color: "blue" }}
+              style={{ fontSize: "12px", cursor: "pointer" }}
               onClick={() => settoggle(!toggle)}
             >
               Don't have an account Sign up
             </span>
-            <button className="button infoButton" type="submit" disabled={loading}>
+            <button className="button infoButton" type="submit" >
               Login
             </button>
           </div>

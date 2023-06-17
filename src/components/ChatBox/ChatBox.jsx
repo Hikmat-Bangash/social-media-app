@@ -100,12 +100,10 @@ const ChatBox = ({ chat, CurrentUser, setsendMessage, recieveMessage }) => {
     <>
       <div className="ChatBox-container">
         {chat ? (
-
-
           <>
             <div className="chat-header">
-              <div className="follower">
-                <div>
+              <div className="follower chat">
+                
                   <img src={userData?.profilePicture ? userData.profilePicture : avator} alt=""
                     className='followerImage'
                     style={{ width: '65px', height: '65px', objectFit: 'cover' }}
@@ -113,28 +111,30 @@ const ChatBox = ({ chat, CurrentUser, setsendMessage, recieveMessage }) => {
 
                   <div className="name" style={{ fontSize: '0.8rem' }}>
                     <span>{userData?.firstname} {userData?.lastname}</span>
-                  </div>
                 </div>
+                
               </div>
             </div>
 
 
             {/* -------- Chat messages -------- */}
             <div className="chat-body">
-              {Messages.map((message, index) => (
-                
-                  <div key={index} ref={scroll} className={message.senderId === CurrentUser ? "message own" : "message"}>
+              {Messages.map((message) => (
+                <>
+                  <div ref={scroll} className={message.senderId === CurrentUser ? "message own" : "message"}>
                     <span>{message.text}</span>
                     <span>{format(message.createdAt)}</span>
                   </div>
-                
+                </>
               ))}
             </div>
 
             {/* ------ chat sender section -------- */}
             <div className="chat-sender">
+
               <div>+</div>
               <InputEmoji
+                className="Input-icon"
                 value={newMessage}
                 onChange={handleChange}
               />

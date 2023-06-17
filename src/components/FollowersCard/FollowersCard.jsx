@@ -1,5 +1,6 @@
 import React from 'react'
 import './FollowersCard.css'
+import { Followers } from '../../Data/FollowersData'
 import User from './User'
 import {useSelector} from 'react-redux'
 import { useEffect } from 'react'
@@ -7,7 +8,6 @@ import { getAllUsers } from '../../Api/UserInfoRequest'
 import { useState } from 'react'
 
 const FollowersCard = () => {
-
 const [persons, setpersons] = useState([])
 const {user} = useSelector((state)=>state.AuthReducer.authData);
     // -------- getAllusers ----------------
@@ -28,7 +28,7 @@ const {user} = useSelector((state)=>state.AuthReducer.authData);
 
         {persons.map((person, id)=>{
             if(person._id !== user._id){
-                  return  <User key={id} person={person} id={id} />
+                  return  <User person={person} id={id} />
                     
                 }
         })}

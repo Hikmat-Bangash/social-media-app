@@ -26,8 +26,8 @@ const Auth = () => {
 // -----------------------------------------------
 //-------- Fetching REDUX STATE MANAGEMENT --------------------
 //  const error = useSelector((state)=>state.AuthReducer.error);
-  const loading = useSelector((state) => state.AuthReducer.loading);
-  
+ const loading = useSelector((state)=>state.AuthReducer.loading);
+ console.log(error)
  const dispatch = useDispatch();
 
 
@@ -47,32 +47,48 @@ const Auth = () => {
   setlogin({...login, [event.target.name]: event.target.value});
 }
   //==================== SUBMIT DATA OR REGISTERING OR SIGNING INTO THE APP =============
-  const SubmitData = (e) => {
+  const SubmitData =async (e) => {
     e.preventDefault();
     //------- for sign up sectio -----------------
     if (!toggle) {
       console.log("sign up section");
       if (data.password !== data.confirmpass){ 
-        // seterror(true);
-        console.log("confirm password is not matching")
+        seterror(true);
     } else {
       console.log(data);
-      // seterror(false);
-      settoggle(!toggle);
-      dispatch(SignUP(data));
+        seterror(false);
+        try {
+          const res = await dispatch(SignUP(data));
+          console.log(res)
+          // eslint-disable-next-line eqeqeq
+          if (res.status == 200) {
+            settoggle(!toggle);
+            window.alert("signUp successfully")
+            // eslint-disable-next-line eqeqeq
+          } else if (res.status == 401) {
+            window.alert("This email has already registered")
+          }
+        
+        } catch (error) {
+          console.log(error)
+        }
+       
     }
   }
   //------ for login section --------------------
   else{
-//        if(login.username !== data.username || login.password !== data.password){
-//         seterror(true);
-//         console.log(login);
-//        }else{
-//          seterror(false);
-//          console.log("logged in successfully");
-//          dispatch(logIn(login));
-//        }
-      dispatch(logIn(login));
+      console.log("login section");
+      try {
+        const res = await dispatch(logIn(login));
+        console.log(res)
+        if (res.status === 401) {
+          window.alert("Wrong Credentials!")
+        }
+      } catch (error) {
+        console.log(error)
+        window.alert("something went wrong")
+      }
+      
 
   }
   };

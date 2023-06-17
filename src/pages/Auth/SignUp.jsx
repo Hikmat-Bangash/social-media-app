@@ -4,10 +4,10 @@ import "./Auth.css";
 const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) => {
     return (
       <div className="a-right">
-        <form onSubmit={SubmitData} className="infoForm authForm">
+        <form onSubmit={SubmitData} className="infoForm signup authForm">
           <h3>Sign up</h3>
   
-       <div>
+          <div>
             <input
              required
               type="text"
@@ -58,15 +58,19 @@ const SignUp = ({loading, toggle, settoggle, handleChange, SubmitData, error }) 
               onChange={handleChange}
             />
           </div>
-        
+          {error && (
+            <span style={{ color: "red" }}>
+              *Confirm Password is not matching!
+            </span>
+          )}
           <div>
             <span
-              style={{ fontSize: "12px", cursor: "pointer", color: "blue" }}
+              style={{ fontSize: "12px", cursor: "pointer", color: 'blue' }}
               onClick={() => settoggle(!toggle)}
             >
               Already have an account. Login!
             </span>
-            <button className="button infoButton" type="submit" disabled={loading}>
+            <button className="button infoButton" type="submit">
               Signup
             </button>
           </div>
