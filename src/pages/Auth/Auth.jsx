@@ -83,6 +83,8 @@ const Auth = () => {
         console.log(res)
         if (res.status === 401) {
           window.alert("Wrong Credentials!")
+        } if (res.status === 404) {
+          window.alert("Invalid user!")
         }
       } catch (error) {
         console.log(error)
