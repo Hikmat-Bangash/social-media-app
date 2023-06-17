@@ -71,6 +71,7 @@ const Auth = () => {
         
         } catch (error) {
           console.log(error)
+          settoggle(!toggle);
         }
        
     }
